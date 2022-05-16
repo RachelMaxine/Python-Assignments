@@ -34,4 +34,4 @@ z = float(input(Enter zValue))
     result = ((x+y+z)/3)
     return result
 
-print(three_number_average(1, 2, 3))
+print(three_number_average(1, 2, 3)) 
