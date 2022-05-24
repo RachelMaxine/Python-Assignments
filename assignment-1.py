@@ -34,7 +34,6 @@ num = 4;
 print("Factorial of",num,"is",
 factorial(num))
 
-
     '''Item 2.
     Classify Grade. 2 points.
 
@@ -59,23 +58,22 @@ factorial(num))
         the letter grade equivalent of the number grade.
     '''
     # Write your code below this line
-marks = float(input("Input Grade"))
-
-if marks >= 92:
-    print("Grade: A+")
-elif marks >= 86 and marks < 91.9:
-    print("Grade: A")
-elif marks >= 80 and marks < 85.9:
-    print("Grade: A")
-elif marks >= 74 and marks < 79.9:
-    print("Grade: B+")
-elif marks >= 67 and marks < 73.9:
-    print("Grade: B")
-elif marks >= 60 and marks < 66.9:
-    print("Grade: C")
-else:
-    print("Grade: F")
-
+    if number_grade >=92 and number_grade <= 100:
+        return("A")
+    elif number_grade >=86 and number_grade <=91.9:
+        return("B+")
+    elif number_grade >=80 and number_grade <=85.9:
+        return("B")
+    elif number_grade >=74 and number_grade <=79.9:
+        return("C+")
+    elif number_grade >=67 and number_grade <=73.9:
+        return("C")
+    elif number_grade >=60 and number_grade <=66.9:
+        return("D")
+    elif number_grade >=0 and number_grade <=59.9:
+        return("F")
+number_grade = float(input("Enter Grade: "))
+print("Number grade is equivanlent to:" + classify_grade(number_grade))
 
 def average_weight(item_quantity_1, item_weight_1, item_quantity_2, item_weight_2):
     '''Item 3.
@@ -102,15 +100,9 @@ def average_weight(item_quantity_1, item_weight_1, item_quantity_2, item_weight_
         the weighted average weight of one item.
     '''
     # Write your code below this line
-
-item_quantity_1 = float(input('Quantity of Items in Bag 1'))
-item_quantity_2= float(input('Quantity of Items in Bag 2'))
-item_weight_1 = float(input('Weight of Each Item in Bag 1'))
-item_weight_2 = float(input('Weight of Each Item in Bag 2'))
-
-avg = (item_quantity_1*item_weight_1 + item_quantity_2*item_quantity_2) / (item_quantity_1+item_quantity_2)
-
-print('The weighted average weight of one item = %avg)
+    return (item_weight_1* item_quantity_1 + item_weight_2 * item_quantity_2)/(item_quantity_1+item_quantity_2)
+print ("The weighted average weight of one item is ")
+print (average_weight(1, 2, 3, 4))
 
 def string_sum(string):
     '''Item 4.
@@ -132,17 +124,14 @@ def string_sum(string):
         the sum of the digits contained in the string.
     '''
     # Write your code below this line
-def sum_digits_string(str1):
-    sum_digit = 0
-    for x in str1:
-        if x.isdigit() == True:
-            z = int(x)
-            sum_digit = sum_digit + z
-
-    return sum_digit
-
-print(sum_digits_string("Rachel12122000"))
-
+    sum = 0
+    for i in string:
+        if i.isdigit() == True:
+            num = int(i)
+            sum = sum + num
+    return sum
+num = string_sum("123asd123")
+print(f" The sum of the digits contained in the string is {num}")
 def distance(x_1, y_1, x_2, y_2):
 
     '''Item 5.
@@ -235,4 +224,4 @@ def make_change(amount):
         diffChange -=.01
 
     print(f"1P:{countPeso}/25C:{count25}/10C:{count10}/5C:{count05}/1C:{count01}")
-make_change(27.78) 
+make_change(27.78)
